@@ -23,14 +23,18 @@ void setup()
 
   // Cho phep ngat
   SPCR |= bit(SPIE);
+
+//  Serial.begin (9600);
+//  Serial.println ("Starting");
 }
+
 
 // SPI interrupt routine
 ISR (SPI_STC_vect)
 {
   byte c = SPDR;
 
-  if (c == 1)  //nhan duoc tin hieu tu Master de yeu cau truyen data
+  if (c == 4)  //nhan duoc tin hieu tu Master de yeu cau truyen data
     {
       active = true;
       pos = 0;
@@ -49,6 +53,7 @@ ISR (SPI_STC_vect)
     active = false;
 }
 
+
 void loop ()
 {
   val = analogRead(analogPin);  // read the input pin
@@ -58,6 +63,30 @@ void loop ()
   nguyen = temp/1.0;
   //thap phan
   le = (temp - nguyen)*100;
-  x = String (nguyen) + "." + String (le);
+
+ if(nguyen<10 && le<10)
+ {
+  x = "0" + String (nguyen) + ".0" + String (le);
+ }
+ else
+ {
+   if(nguyen<10 && le>10)
+   {
+     x = "0" + String (nguyen) + "." + String (le);
+   }
+   else
+   {
+     if(nguyen>10 && le<10)
+     {
+       x = String (nguyen) + ".0" + String (le);
+     }
+     else
+     {//if(nguyen>10 && le>10)
+       x = String (nguyen) + "." + String (le); 
+     }
+   }
+ }
   buf=x;
+//  Serial.print ("Amoniac: ");
+//  Serial.println (x);
 }

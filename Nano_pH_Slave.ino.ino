@@ -1,4 +1,5 @@
 #include<SPI.h>
+#define LcdDataBus PORTD
 
 //khai bao bien
 String buf="";
@@ -25,12 +26,13 @@ void setup()
   SPCR |= bit(SPIE);
 }
 
+
 // SPI interrupt routine
 ISR (SPI_STC_vect)
 {
   byte c = SPDR;
 
-  if (c == 1)  //nhan duoc tin hieu tu Master de yeu cau truyen data
+  if (c == 3)  //nhan duoc tin hieu tu Master de yeu cau truyen data
     {
       active = true;
       pos = 0;
@@ -49,6 +51,7 @@ ISR (SPI_STC_vect)
     active = false;
 }
 
+
 void loop ()
 {
   val = analogRead(analogPin);  // read the input pin
@@ -60,4 +63,5 @@ void loop ()
   le = (temp - nguyen)*100;
   x = String (nguyen) + "." + String (le);
   buf=x;
+
 }
