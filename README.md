@@ -10,5 +10,5 @@ ls -l /dev/ttyUSB0
 sudo chown dthinh /dev/ttyUSB0
 
 ## Disable all programs are running on USB0
-ps ax
+### ps ax
 find and kill PID process
