@@ -1,7 +1,7 @@
 # NTU_Project2021
 ## Install pyserial:
-sudo apt install python-pip
-pip install pyserial
+###### sudo apt install python-pip
+###### pip install pyserial
 
 ## Check USB Port
 ls -l /dev/ttyUSB0
