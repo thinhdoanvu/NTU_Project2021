@@ -12,3 +12,6 @@ sudo chown dthinh /dev/ttyUSB0
 ## Disable all programs are running on USB0
 ### ps ax
 find and kill PID process
+
+## Run script to get data
+python savedata.py
