@@ -43,7 +43,7 @@ while True:
 			f.write("  "+'"Date"'+":"+'"'+dt_string+'"'+",\n"+"  "+'"Time"'+":"+'"'+ti_string+'"'+"\n")
                 	f.close()
 			f = open("dataFile.txt","a")
-			time.sleep(60)
+			time.sleep(1)#1 second for reading data again
 
 	#Save to json file
 		f.write(data_raw)
