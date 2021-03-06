@@ -15,3 +15,10 @@ find and kill PID process
 
 ## Run script to get data
 python savedata.py
+
+## Install Apache:
+##### sudo apt-get install lamp-server^
+##### udo apt-get install apache2
+##### sudo /etc/init.d/apache2 restart
+
+##### http://localhost/
