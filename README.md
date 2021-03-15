@@ -22,3 +22,6 @@ python savedata.py
 ##### sudo /etc/init.d/apache2 restart
 
 ##### http://localhost/
+
+## Permit user add files or folders in www folder
+chmod 755 -R ../../var/www/
