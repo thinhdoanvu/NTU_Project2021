@@ -25,3 +25,5 @@ python savedata.py
 
 ## Permit user add files or folders in www folder
 chmod 755 -R ../../var/www/
+
+A simple and efficient Json library for embedded C++ namely ArduinoJson version 5.11.2 was developed by Benoit Blanchon need to be installed on Arduino IDE Platform, it used to write program for Arduino master which communicated with Raspberry pi. This is library for json format transmission between Arduino device and computer via comport.
